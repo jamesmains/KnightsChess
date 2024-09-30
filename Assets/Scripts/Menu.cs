@@ -38,6 +38,19 @@ public class Menu : MonoBehaviour {
     
     [SerializeField] [FoldoutGroup("Status")] [ReadOnly]
     private Vector2 TargetPosition;
+    
+    #if UNITY_EDITOR
+    [Button]
+    private void SetOpenPosition() {
+        OpenPosition = Rect.anchoredPosition;
+    }
+    
+    [Button]
+    private void SetClosedPosition() {
+        ClosePosition = Rect.anchoredPosition;
+    }
+    #endif
+    
 #if UNITY_EDITOR
     private void OnValidate() {
         if (TryGetComponent(out CanvasGroup cg)) {
