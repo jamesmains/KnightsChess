@@ -2680,9 +2680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '* Thingy magjig
-
-    * Thingy 2'
+  m_text: Music - https://tallbeard.itch.io/music-loop-bundle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 53f4e05496a93424ca00e978048a2ba8, type: 2}
   m_sharedMaterial: {fileID: 480231410329148939, guid: 53f4e05496a93424ca00e978048a2ba8, type: 2}
