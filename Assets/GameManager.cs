@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour {
     private float StartingTime;
 
     [SerializeField] [FoldoutGroup("Settings")]
-    private int EnemySpawnsPerRound;
+    private float PointsPerCapture;
+    
+    [SerializeField] [FoldoutGroup("Settings")]
+    private int MaxEnemySpawns;
 
     [SerializeField] [FoldoutGroup("Events")]
     private UnityEvent OnStartGame = new();
@@ -45,7 +48,13 @@ public class GameManager : MonoBehaviour {
     private int SessionScore;
 
     [SerializeField] [FoldoutGroup("Status")] [ReadOnly]
-    private bool GameActive;
+    private int NumberOfSpawnableEnemies;
+    
+    [SerializeField] [FoldoutGroup("Status")] [ReadOnly]
+    public static bool GameActive;
+    
+    [SerializeField] [FoldoutGroup("Status")] [ReadOnly]
+    public static bool TimerActive;
 
     [SerializeField] [FoldoutGroup("Status")] [ReadOnly]
     private float TileSize;
@@ -63,6 +72,8 @@ public class GameManager : MonoBehaviour {
 
     private void Awake() {
         Singleton = this;
+        TimeText.text = RemainingTime.ToString("");
+        Application.targetFrameRate = -1;
     }
 
     public static void StartGame(List<GameTile> tiles, float size) {
@@ -85,7 +96,9 @@ public class GameManager : MonoBehaviour {
 
     private void SpawnEnemies(List<GameTile> availableTiles) {
         if (!GameActive) return;
-        for (int i = 0; i < EnemySpawnsPerRound; i++) {
+        NumberOfSpawnableEnemies = Singleton.SessionScore < 5 ? 1 : Mathf.FloorToInt(Singleton.SessionScore / 5);
+        NumberOfSpawnableEnemies = Mathf.Clamp(NumberOfSpawnableEnemies, 1, MaxEnemySpawns);
+        for (int i = 0; i < NumberOfSpawnableEnemies; i++) {
             int r = Random.Range(0, availableTiles.Count);
             var spawnTile = availableTiles[r];
             availableTiles.Remove(availableTiles[r]);
@@ -96,9 +109,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public static void CapturePiece(Entity capturedEntity) {
-        if (!Singleton.GameActive) return;
+        if (!GameActive) return;
         Singleton.SpawnedEntities.Remove(capturedEntity);
-        Singleton.RemainingTime += 3f;
+        Singleton.RemainingTime += Singleton.PointsPerCapture / Singleton.NumberOfSpawnableEnemies;
         Singleton.SessionScore++;
         Singleton.ScoreText.text = Singleton.SessionScore.ToString();
         if (Singleton.SpawnedEntities.Count == 1) {
@@ -109,24 +122,28 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (!GameActive) return;
+        print($"Game is Active: {GameActive}, Timer is Active: {TimerActive}");
+        if (!TimerActive) return;
         if (RemainingTime > 0) {
             RemainingTime -= Time.deltaTime;
-            TimeText.text = RemainingTime.ToString("0.00");
+            TimeText.text = RemainingTime.ToString("0.0");
         }
         else EndGame();
     }
 
     private void StartGame() {
+        TimerActive = false;
+        GameActive = true;
         SessionScore = 0;
         ScoreText.text = SessionScore.ToString();
         RemainingTime = StartingTime;
-        GameActive = true;
+        TimeText.text = RemainingTime.ToString("0.0");
         OnStartGame.Invoke();
     }
 
     private void EndGame() {
         GameActive = false;
+        TimerActive = false;
         ResetGame();
         ClearMoves();
         OnEndGame.Invoke();
@@ -139,7 +156,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public static void GetValidMoveTiles(Entity currentEntity) {
-        if (!Singleton.GameActive) return;
+        if (!GameActive) return;
         ClearMoves();
         var currentTile = currentEntity.CurrentTile;
         foreach (var move in currentEntity.ValidMoves) {

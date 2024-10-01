@@ -60,8 +60,10 @@ public class Entity : MonoBehaviour {
             yield return EntityRect.DOSizeDelta(CachedSize, 1f).SetEase(MoveScaleEase).WaitForCompletion();
             
         }
-        if(Team == 0)
+
+        if (Team == 0) {
             GetValidMoveTiles();
+        }
     }
 
     public void MoveToTile(GameTile newTargetTile) {
@@ -83,6 +85,8 @@ public class Entity : MonoBehaviour {
             }
 
             if (Team == 0) {
+                if (!GameManager.TimerActive && GameManager.GameActive)
+                    GameManager.TimerActive = true;
                 CurrentTile.SetOccupyingEntity(this);
                 GetValidMoveTiles();    
             }

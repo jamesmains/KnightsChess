@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4dd9d8d5cf2e93e468d8312b86775d59
+guid: 9f412fd14f9dbf740a0b191ab51f5a59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8900450184890682882
-    second: button_square_depth_line_0
+      213: -5668518402485374812
+    second: Frame_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 64, y: 70, z: 70, w: 52}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -152,23 +152,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_square_depth_line_0
+      name: Frame_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 12, y: 20, z: 12, w: 12}
+        x: 4
+        y: 5
+        width: 424
+        height: 567
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20e087b5940c48b70800000000000000
-      internalID: 8900450184890682882
+      spriteID: 4a03819cb806551b0800000000000000
+      internalID: -5668518402485374812
       vertices: []
       indices: 
       edges: []
@@ -177,8 +177,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 11986997453da1c49aea66b058888b3d
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button_square_depth_line_0: 8900450184890682882
+      Frame_0: -5668518402485374812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

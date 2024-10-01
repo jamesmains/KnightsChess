@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4dd9d8d5cf2e93e468d8312b86775d59
+guid: d5b8e263711266849b87f5ab2c65673b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8900450184890682882
-    second: button_square_depth_line_0
+      213: -16824848843660912
+    second: volume_off_64dp_FFFFFF_FILL0_wght400_GRAD0_opsz48_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,23 +152,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_square_depth_line_0
+      name: volume_off_64dp_FFFFFF_FILL0_wght400_GRAD0_opsz48_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 12, y: 20, z: 12, w: 12}
+        x: 12
+        y: 14
+        width: 218
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20e087b5940c48b70800000000000000
-      internalID: 8900450184890682882
+      spriteID: 091264d93e934cff0800000000000000
+      internalID: -16824848843660912
       vertices: []
       indices: 
       edges: []
@@ -177,7 +177,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 11986997453da1c49aea66b058888b3d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +186,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      button_square_depth_line_0: 8900450184890682882
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
