@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      volume_off_64dp_FFFFFF_FILL0_wght400_GRAD0_opsz48_0: -16824848843660912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

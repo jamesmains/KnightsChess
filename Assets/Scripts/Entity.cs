@@ -55,6 +55,7 @@ public class Entity : MonoBehaviour {
             targetPos.y -= EntityRect.sizeDelta.y / 2;
             yield return EntityRect.DOAnchorPos(targetPos, 0.5f)
                 .SetEase(SpawnToTileEase).WaitForCompletion();
+            AudioManager.PlayGameSfxClip();
             yield return EntityRect.DOSizeDelta(SquishSize(), 0.05f).SetEase(MoveScaleEase).WaitForCompletion();
 
             yield return EntityRect.DOSizeDelta(CachedSize, 1f).SetEase(MoveScaleEase).WaitForCompletion();
@@ -77,11 +78,12 @@ public class Entity : MonoBehaviour {
             targetPos.y -= EntityRect.sizeDelta.y / 2;
             if (LightningMove) {
                 EntityRect.anchoredPosition = targetPos;
+                AudioManager.PlayGameSfxClip();
             }
             else {
                 yield return EntityRect.DOAnchorPos(targetPos, 0.5f).SetEase(MoveToTileEase)
                     .WaitForCompletion();
-                
+                AudioManager.PlayGameSfxClip();
             }
 
             if (Team == 0) {

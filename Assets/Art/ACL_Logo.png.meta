@@ -236,7 +236,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ACL_Logo_0: 490546752618822357
+      ACL_Logo_1: 7432516105380403756
+      ACL_Logo_2: 6471940562079478044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

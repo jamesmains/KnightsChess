@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4997617848334845763}
   - component: {fileID: 915081774709837945}
   - component: {fileID: 545698031579113049}
+  - component: {fileID: 7115987817939538156}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -251,7 +252,19 @@ MonoBehaviour:
       m_Calls: []
   OnButtonClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7115987817939538156}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlaySfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnButtonExit:
     m_PersistentCalls:
       m_Calls: []
@@ -288,6 +301,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7115987817939538156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851599537140039804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6e3f46b5c1f496e8264617616a0550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3451486780604620000
 GameObject:
   m_ObjectHideFlags: 0
