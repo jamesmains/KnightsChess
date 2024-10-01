@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         Singleton = this;
         TimeText.text = RemainingTime.ToString("");
-        Application.targetFrameRate = -1;
+        Application.targetFrameRate = 60;
     }
 
     public static void StartGame(List<GameTile> tiles, float size) {
@@ -138,12 +138,18 @@ public class GameManager : MonoBehaviour {
         ScoreText.text = SessionScore.ToString();
         RemainingTime = StartingTime;
         TimeText.text = RemainingTime.ToString("0.0");
+        AdsManager.Singleton.BannerAds.ShowBannerAd();
         OnStartGame.Invoke();
     }
 
     private void EndGame() {
         GameActive = false;
         TimerActive = false;
+        Leaderboard.SetNewLeaderboardScore(SessionScore);
+        AdsManager.Singleton.BannerAds.HideBannerAd();
+        if (SessionScore > 5) {
+            AdsManager.Singleton.InterstitialAds.ShowInterstitialAd();
+        }
         ResetGame();
         ClearMoves();
         OnEndGame.Invoke();
