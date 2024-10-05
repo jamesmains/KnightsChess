@@ -111,7 +111,9 @@ public class GameManager : MonoBehaviour {
     public static void CapturePiece(Entity capturedEntity) {
         if (!GameActive) return;
         Singleton.SpawnedEntities.Remove(capturedEntity);
-        Singleton.RemainingTime += Singleton.PointsPerCapture / Singleton.NumberOfSpawnableEnemies;
+        float timeReward = Singleton.PointsPerCapture / Singleton.NumberOfSpawnableEnemies;
+        timeReward = Mathf.Clamp(timeReward, 1f, timeReward);
+        Singleton.RemainingTime += timeReward;
         Singleton.SessionScore++;
         Singleton.ScoreText.text = Singleton.SessionScore.ToString();
         if (Singleton.SpawnedEntities.Count == 1) {
@@ -128,7 +130,7 @@ public class GameManager : MonoBehaviour {
             RemainingTime -= Time.deltaTime;
             TimeText.text = RemainingTime.ToString("0.0");
         }
-        else EndGame();
+        else EndGame(false);
     }
 
     private void StartGame() {
@@ -138,18 +140,20 @@ public class GameManager : MonoBehaviour {
         ScoreText.text = SessionScore.ToString();
         RemainingTime = StartingTime;
         TimeText.text = RemainingTime.ToString("0.0");
-        AdsManager.Singleton.BannerAds.ShowBannerAd();
+        // AdsManager.Singleton.LoadInterstitial();
+        // AdsManager.Singleton.LoadBanner();
         OnStartGame.Invoke();
     }
 
-    private void EndGame() {
+    public void EndGame(bool didQuit) {
         GameActive = false;
         TimerActive = false;
-        Leaderboard.SetNewLeaderboardScore(SessionScore);
-        AdsManager.Singleton.BannerAds.HideBannerAd();
-        if (SessionScore > 5) {
-            AdsManager.Singleton.InterstitialAds.ShowInterstitialAd();
-        }
+        if(!didQuit)
+            Leaderboard.SetNewLeaderboardScore(SessionScore);
+        // AdsManager.Singleton.DestroyBanner();
+        // if (SessionScore > 5) {
+        //     AdsManager.Singleton.ShowInterstitial();
+        // }
         ResetGame();
         ClearMoves();
         OnEndGame.Invoke();

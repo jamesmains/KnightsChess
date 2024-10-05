@@ -1,0 +1,23 @@
+# ninja log v5
+144	314	7497723185723386	C:/Users/tylur/Development/GitHub/KnightsChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4oe4c6z4/obj/armeabi-v7a/libswappywrapper.so	3a3f1cc50acce010
+13	927	7497723191921902	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	98401abb463530b4
+43	143	7497723184117427	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4431ffd550d5c3e9
+33	670	7497723189357294	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	86af2f06461de272
+38	713	7497723189809890	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7df800a5a167d4b0
+18	622	7497723188894326	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	fe30c57a9d57cca9
+7	608	7497723188757145	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2e6c11228c9f62ba
+2	707	7497723189739737	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7e08eb958be9d7ed
+23	642	7497723189070272	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d4f9fae3979ab0f7
+28	872	7497723191393475	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e89f0ed7ef1d5a62
+927	1005	7497723192684881	C:/Users/tylur/Development/GitHub/KnightsChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4oe4c6z4/obj/armeabi-v7a/libgame.so	7ada24dcfc044f40
+24	78	7497730230928248	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4431ffd550d5c3e9
+78	140	7497730231462645	C:/Users/tylur/Development/GitHub/KnightsChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4oe4c6z4/obj/armeabi-v7a/libswappywrapper.so	3a3f1cc50acce010
+14	344	7497730233542720	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	86af2f06461de272
+2	344	7497730233542720	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2e6c11228c9f62ba
+5	363	7497730233739261	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	fe30c57a9d57cca9
+17	392	7497730234020631	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d4f9fae3979ab0f7
+20	436	7497730234472497	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7df800a5a167d4b0
+10	457	7497730234683094	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7e08eb958be9d7ed
+12	563	7497730235706697	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e89f0ed7ef1d5a62
+7	586	7497730235947810	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	98401abb463530b4
+586	635	7497730236438137	C:/Users/tylur/Development/GitHub/KnightsChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4oe4c6z4/obj/armeabi-v7a/libgame.so	7ada24dcfc044f40

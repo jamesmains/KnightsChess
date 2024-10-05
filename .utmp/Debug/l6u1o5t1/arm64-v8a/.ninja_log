@@ -1,0 +1,12 @@
+# ninja log v5
+23	162	7497695140096848	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	eeb6d693625d18ac
+164	286	7497695141210041	C:/Users/tylur/Development/GitHub/KnightsChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/l6u1o5t1/obj/arm64-v8a/libswappywrapper.so	b5590b6962a62fdf
+8	606	7497695144494340	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f11533f48e9fa7ba
+3	617	7497695144617279	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	f4424c56b47128b3
+16	620	7497695144642341	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	4662b69ef1fe560f
+20	639	7497695144833772	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7fabf6f0c6018b45
+6	662	7497695145034932	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	175a4a6c5820bb26
+10	681	7497695145248454	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	967c717f254220d
+13	711	7497695145536861	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	43cbc3692d40a751
+0	751	7497695145924295	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	251254de1b46df00
+751	809	7497695146491632	C:/Users/tylur/Development/GitHub/KnightsChess/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/l6u1o5t1/obj/arm64-v8a/libgame.so	1f15efd4ad4bc005

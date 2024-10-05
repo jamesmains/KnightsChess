@@ -69,6 +69,8 @@ public class GameField : MonoBehaviour {
     private int BoardSize()=>RowSize * ColumnSize;
 
     public static Vector2 CanvasSize;
+    private Coroutine OpenRoutine;
+    private Coroutine CloseRoutine;
 
     private void Start() {
         CreateBoard();
@@ -91,7 +93,8 @@ public class GameField : MonoBehaviour {
     private void CreateBoard() {
         ClearTiles();
         CanvasSize = ParentCanvas.sizeDelta;
-        ModifiedTileSize = ParentCanvas.sizeDelta.x / RowSize;
+        var downSize = ParentCanvas.sizeDelta.y / ParentCanvas.sizeDelta.x;
+        ModifiedTileSize = ParentCanvas.sizeDelta.y > ParentCanvas.sizeDelta.x ? ParentCanvas.sizeDelta.x / RowSize : (ParentCanvas.sizeDelta.y / ColumnSize)*downSize;
         Grid.cellSize = new Vector2(ModifiedTileSize,ModifiedTileSize);
         SpawnPlaceholderTiles();
         CachedRowSize = RowSize;
@@ -103,7 +106,10 @@ public class GameField : MonoBehaviour {
         if (RowSize != CachedRowSize || ColumnSize != CachedColumnSize) {
             CreateBoard();
         }
-        StartCoroutine(ShowTiles());
+
+        if (CloseRoutine != null)
+            StopCoroutine(CloseRoutine);
+        OpenRoutine = StartCoroutine(ShowTiles());
         IEnumerator ShowTiles()
         {
             foreach (var placeholderTile in SpawnedPlaceholderTiles) {
@@ -121,8 +127,9 @@ public class GameField : MonoBehaviour {
     
     [Button]
     public void CloseBoard() {
+        if (OpenRoutine != null)
+            StopCoroutine(OpenRoutine);
         StartCoroutine(HideTiles());
-
         IEnumerator HideTiles() {
             foreach (var placeholderTile in SpawnedPlaceholderTiles) {
                 placeholderTile.gameObject.SetActive(false);
